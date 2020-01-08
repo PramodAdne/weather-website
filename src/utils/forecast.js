@@ -10,7 +10,7 @@ request({url, json : true}, (err,{body})=>{
     else if(body.error){
         callback(body.error, undefined)
     }else {
-        callback(undefined,body.daily.data[0].summary + ' It is currently ' + body.currently.temperature + ' degree out. There is a ' +body.currently.precipProbability + '% chance of rain')
+        callback(undefined,body.daily.data[0].summary + ' It is currently ' + body.currently.temperature + ' degree out. There is a ' +body.currently.precipProbability + '% chance of rain, Highest Teperature today : ' + body.daily.data[0].temperatureHigh +' Lowest Temperature Today '+body.daily.data[0].temperatureLow)
         //     summary : res.body.daily.data[0].summary,
         //     temperature : res.body.currently.temperature,
         //     rain : res.body.currently.precipProbability
